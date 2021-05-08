@@ -1,0 +1,55 @@
+head,
+body {
+    background-color: grey;
+    
+
+}
+
+.card {
+    cursor: pointer
+}
+
+.hd {
+    font-size: 45px;
+    font-weight: 550
+
+}
+
+.card.hover,
+.card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2)
+}
+
+.img {
+    margin-bottom: 35px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222)
+}
+
+.card-title {
+  
+    font-size:40px;
+}
+
+button.focus,
+button:focus {
+    outline: 0;
+    box-shadow: none !important
+}
+
+.ft {
+    margin-top: 25px
+}
+
+.chk {
+    margin-bottom: 5px
+}
+
+.rck {
+    margin-top: 20px;
+    padding-bottom: 15px
+}
+.text-muted{
+    font-size: 25px;
+    font-style: White;
+}

@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.7) url("images/waterfall.jpg");
+  font-family: "Arial";
+}
+.login {
+  width: 382px;
+  overflow: hidden;
+  margin: auto;
+  margin: 20 0 0 450px;
+  padding: 40px;
+  background: transparent;
+  border-radius: 15px;
+}
+h2 {
+  text-align: center;
+  margin: 50px;
+  padding: 50px;
+  color: black;
+  background-color: auto;
+  padding: 20px;
+}
+label {
+  color: #08ffd1;
+  font-size: 17px;
+}
+#Uname {
+  width: 300px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 3px;
+  padding-left: 8px;
+}
+#Uname:hover {
+  text-decoration: none;
+  background-color: grey;
+}
+#Pass {
+  width: 300px;
+  height: 30px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: none;
+  padding-left: 8px;
+}
+#Pass:hover {
+  text-decoration: none;
+  background-color: grey;
+}
+#log {
+  width: 80px;
+  height: 30px;
+  border: none;
+  position: absolute;
+  background-color: white;
+  cursor: pointer;
+  border-radius: none;
+  padding-left: 8px;
+}
+#log:hover {
+  text-decoration: none;
+  background-color: grey;
+}
+span {
+  color: white;
+  font-size: 17px;
+}
+a:hover {
+  float: none;
+  background-color: grey;
+  text-decoration: none;
+}
