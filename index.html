@@ -17,19 +17,19 @@
 <ul class="nav-list v-class-resp">
 	<div class="logo"><img src="images/mentall.jpg" alt="logo"></div>
 	<li><a href="#home">Home</a></li>
-	<li><a href="/about.html">AboutUs</a></li>
+	<li><a href="/about.html">About us</a></li>
 	<li><a href="/servicess.html">Services</a></li>
-	<li><a href="#contact">ContactUs</a></li>
+	<li><a href="#contact">Contact us</a></li>
 	<li><a href="/appoint.html">Appointment</a></li>
 	<li><a href="/register.html">SignIn/SignUp</a></li>
 	<li class="logout hidden">
 		<a onclick="logout(event)" href="#">Logout</a>
 	</li>
 </ul>
-<div class="rightnav v-class-resp">
+<!-- <div class="rightnav v-class-resp">
 	<input type="text" name="search" id="search">
-	<button class="btn btn-sm">Search</button>
-</div>
+	<button class="btn btn-sm"></button>
+</div> -->
 	<div class="burger">
 	<div class="line"></div>
 	<div class="line"></div>
@@ -41,8 +41,9 @@
 	<div class="firsthalf">
 	<p class="text-big"> Make Your Mental Health A Priority</p>
 	<p class="text-small"> The Future Of The Country Lies In Mentally Fit Youths.</p>
+	<br><br>
 	<div class="buttons">
-		<button class="btn">Subscribe</button>
+		<a button class="btn" href="https://youtu.be/G0zJGDokyWQ">Subscribe</button>
 		<a button class="btn" href="https://youtu.be/OGZjYnZg4Cs, https://youtu.be/gy1iH_Gxn0Q">Watch video</button></a>
 
 	</div>
@@ -107,11 +108,13 @@ Your mental health is also important because it can affect your physical health.
 <section class="contact" id="contact">
 	<h2 class="text-center"> Contact Us</h2>
 	<div class="form">
-		<input class="form-input" type="text" name="name" id="name" placeholder="Enter your name">
-		<input class="form-input" type="text" name="phone" id="phone" placeholder="Enter your phone">
-		<input class="form-input" type="text" name="email" id="email" placeholder="Enter your email">
+		<form id="contact" onsubmit="return contact(event)">
+		<input class="form-input" required type="text" name="name" id="name" placeholder="Enter your name">
+		<input class="form-input" required type="text" name="phone" id="phone" placeholder="Enter your phone">
+		<input class="form-input" required type="text" name="email" id="email" placeholder="Enter your email">
 		<textarea class="form-input" name="text" id="text" cols="30" rows="10" placeholder="Ellaborate your concern"></textarea>
 		<button class="btn btn-sm btn-dark">Submit</button>
+		</form>
 	</div>
 </section>
 <footer class="background">
@@ -121,10 +124,17 @@ Your mental health is also important because it can affect your physical health.
 </footer>
 <script src="js/responsive.js"></script>
 	<script>
+		
 		function logout(e) {
 			e.preventDefault();
 			window.localStorage.setItem('loggedin', false);
 			window.location.href = window.location.origin;
+		}
+
+		function contact(e) {
+			e.preventDefault();
+			alert("Thank you for contacting, we will reach out soon!");
+			// document.getElementById("contact").reset();
 		}
 		
 		let isLoggedIn = window.localStorage.getItem("loggedin") || false;
