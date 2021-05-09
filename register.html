@@ -8,7 +8,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="">
+        <form id="register" onsubmit="return registerForm(event)">
           <h1>Create Account</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fa fa-facebook"></i></a>
@@ -16,14 +16,14 @@
             <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
           </div>
           <span>or use your email for registration</span>
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <input type="password" name="password" placeholder="Password" />
+          <input required type="text" name="name" placeholder="Name" />
+          <input required type="email" name="email" placeholder="Email" />
+          <input required type="password" name="password" placeholder="Password" />
           <button>SignUp</button>
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="#">
+        <form id="login" onsubmit="return loginForm(event)">
           <h1>Sign In</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fa fa-facebook"></i></a>
@@ -31,10 +31,8 @@
             <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
           </div>
           <span>or use your account</span>
-          <input type="email" name="email" placeholder="Email" />
-          <input type="password" name="password" placeholder="Password" />
-          <a href="#">Forgot Your Password</a>
-
+          <input required type="email" name="email" placeholder="Email" />
+          <input required type="password" name="password" placeholder="Password" />
           <button>Sign In</button>
         </form>
       </div>
@@ -55,6 +53,7 @@
     </div>
 
     <script type="text/javascript">
+      // show signup and signup
       const signUpButton = document.getElementById("signUp");
       const signInButton = document.getElementById("signIn");
       const container = document.getElementById("container");
@@ -65,6 +64,41 @@
       signInButton.addEventListener("click", () => {
         container.classList.remove("right-panel-active");
       });
+
+      // register funtionality
+      function registerForm(e) {
+        e.preventDefault();
+        let formData = new FormData(e.currentTarget);
+        let user = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          password: formData.get("password"),
+        };
+        window.localStorage.setItem("user", JSON.stringify(user));
+        alert("Successfully Registered, Try loggin In now");
+      }
+
+      function loginForm(e) {
+        e.preventDefault();
+        let formData = new FormData(e.currentTarget);
+        let user = {
+          email: formData.get("email"),
+          password: formData.get("password"),
+        };
+        let dbUser = localStorage.getItem("user") || [];
+        try {
+          dbUser = JSON.parse(dbUser);
+        } catch (error) {
+          alert("user not found");
+        }
+        if (user.email == dbUser.email && user.password == dbUser.password) {
+          window.localStorage.setItem("loggedin", true);
+          alert("Successfully loggedIn");
+          window.location.href = window.location.origin;
+        } else {
+          alert("invalid User");
+        }
+      }
     </script>
   </body>
 </html>

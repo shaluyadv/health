@@ -1,6 +1,5 @@
 body {
-    background-image: url(../images/nature.jpg);
-    background-size: cover;
+    background-color: #ccc;
    font-family: montserrat;
     font-weight: 400;
     color: #fff;
@@ -8,11 +7,12 @@ body {
 }
 .container {
     background-color: #9ca1af;
-    margin: 200px;
-    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: 48% 52%;
-
+    margin: 30px auto;
+    box-shadow: 10px 15px 20px rgb(0 0 0 / 10%);
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container-time {
     background-color: #00000ce7;

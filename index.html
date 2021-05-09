@@ -4,7 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale.0">
 	<link rel="stylesheet" href="css/style.css">
-<title>Importance Of Mental Health</title>
+	<title>Importance Of Mental Health</title>
+	<style>
+		.hidden {
+			display: none;
+		}
+	</style>
 </head>
 <body>
 
@@ -15,9 +20,11 @@
 	<li><a href="/about.html">AboutUs</a></li>
 	<li><a href="/servicess.html">Services</a></li>
 	<li><a href="#contact">ContactUs</a></li>
+	<li><a href="/appoint.html">Appointment</a></li>
 	<li><a href="/register.html">SignIn/SignUp</a></li>
-	
-	
+	<li class="logout hidden">
+		<a onclick="logout(event)" href="#">Logout</a>
+	</li>
 </ul>
 <div class="rightnav v-class-resp">
 	<input type="text" name="search" id="search">
@@ -112,6 +119,21 @@ Your mental health is also important because it can affect your physical health.
 	Copyright &copy; 2045 www.importanceofmentalhealth.com- All rights reserved
 	</p>
 </footer>
-<script src="C:\Users\devil\Desktop\Finalproject\responsive.js"></script>
+<script src="js/responsive.js"></script>
+	<script>
+		function logout(e) {
+			e.preventDefault();
+			window.localStorage.setItem('loggedin', false);
+			window.location.href = window.location.origin;
+		}
+		
+		let isLoggedIn = window.localStorage.getItem("loggedin") || false;
+		let logoutButton = document.querySelector(".logout");
+		if (isLoggedIn && isLoggedIn == 'true') {
+			logoutButton.classList.remove("hidden");
+		} else {
+			logoutButton.classList.add('hidden')
+		}
+	</script>
 </body>
 </html>
